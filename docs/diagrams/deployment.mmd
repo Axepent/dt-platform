@@ -1,0 +1,29 @@
+flowchart TB
+    subgraph pc["Комп’ютер навчального стенда"]
+        Client["Клієнтський процес
+UserApplication"]
+        Server["Серверний процес
+ResourceAccess, TwinManagement,
+TwinApplications, DataQuality,
+Security, Interoperability"]
+        MQTT["Процес MQTT-брокера
+автентифікація та права тем"]
+        DB["Локальне сховище
+історія, пози, журнал"]
+        Emu["1–10 процесів емулятора
+DataCollection + DeviceControl
+200 відліків/с на манекен"]
+    end
+    subgraph unit["Фізичний манекен — альтернатива емулятору"]
+        Controller["Контролер фізичного манекена
+DataCollection + DeviceControl
+локальні обмеження руху"]
+        Hardware["Датчики, приводи,
+кінцевий вимикач, аварійна кнопка"]
+    end
+    Client <-->|"API: команди, стан, запити"| Server
+    Server <-->|"MQTT: телеметрія та команди"| MQTT
+    Server <-->|"Запити й збереження"| DB
+    Emu <-->|"MQTT через loopback"| MQTT
+    Controller <-->|"MQTT через локальну мережу"| MQTT
+    Controller <-->|"Локальні входи й виходи"| Hardware

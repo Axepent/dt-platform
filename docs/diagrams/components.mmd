@@ -1,0 +1,53 @@
+flowchart TB
+    subgraph edge["Контролер / емулятор"]
+        DataCollection["Збирання даних
+(DataCollection)"]
+        DeviceControl["Керування пристроями
+(DeviceControl)"]
+    end
+    subgraph server["Сервер платформи"]
+        ResourceAccess["Доступ до ресурсів та обмін
+(ResourceAccess)"]
+        DataQuality["Якість даних
+(DataQuality)"]
+        TwinManagement["Функціонування та керування двійником
+(TwinManagement)"]
+        TwinApplications["Застосунки та служби двійника
+(TwinApplications)"]
+    end
+    subgraph cross["Наскрізні правила"]
+        Security["Захищеність
+(Security)"]
+        Interoperability["Взаємодійність
+(Interoperability)"]
+    end
+    UserApplication["Користувацький застосунок
+(UserApplication)"]
+    Broker["MQTT-брокер"]
+    Store["Сховище: телеметрія,
+пози та журнал"]
+    Physical["Датчики, приводи,
+кінцевий вимикач і аварійна кнопка"]
+    Physical -->|"Відліки та стани"| DataCollection
+    DataCollection -->|"Телеметрія, події, heartbeat"| Broker
+    Broker -->|"Телеметрія і результати"| ResourceAccess
+    ResourceAccess -->|"Вхідні дані"| DataQuality
+    DataQuality -->|"Валідний актуальний стан"| TwinManagement
+    TwinManagement -->|"Стан через API"| UserApplication
+    UserApplication -->|"Команди, пози, запити"| ResourceAccess
+    ResourceAccess -->|"Дозволені команди"| TwinManagement
+    TwinManagement -->|"Команди до контролера"| ResourceAccess
+    ResourceAccess -->|"Публікація команд"| Broker
+    Broker -->|"Цільові кути та режими"| DeviceControl
+    DeviceControl -->|"Локальне керування приводами"| Physical
+    Physical -->|"Межі та аварійний вхід"| DeviceControl
+    DeviceControl -->|"Результати, аварійні події"| Broker
+    ResourceAccess -->|"Запити поз та історії"| TwinApplications
+    TwinManagement -->|"Стан для аналізу"| TwinApplications
+    TwinApplications -->|"Поза для виконання; попередження"| TwinManagement
+    DataQuality -->|"Історичні відліки"| Store
+    TwinApplications -->|"Пози й історичні запити"| Store
+    ResourceAccess -->|"Журнал команд і подій"| Store
+    Security -.->|"Права API"| ResourceAccess
+    Security -.->|"Права MQTT-тем"| Broker
+    Interoperability -.->|"Спільні контракти обміну"| ResourceAccess
