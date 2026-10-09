@@ -1,0 +1,28 @@
+flowchart TB
+    Sensor["Сформований відлік датчика
+t0 — початок маршруту"]
+    Collection["DataCollection
+збирання й пакування"]
+    Broker["MQTT-брокер"]
+    Access["ResourceAccess
+приймання й декодування"]
+    Quality["DataQuality
+перевірка даних"]
+    State["TwinManagement
+актуальний стан в API; t_api"]
+    UI["UserApplication
+перший кадр із відліком; t_frame"]
+    History["Історичне сховище
+паралельна гілка"]
+    Journal["Журнал подій і помилок
+паралельна гілка"]
+    Sensor -->|"ID, часова мітка, пакування: 15 мс"| Collection
+    Collection -->|"Публікація та транспортування: 25 мс"| Broker
+    Broker -->|"Доставка й декодування: 15 мс"| Access
+    Access -->|"Валідація: 10 мс"| Quality
+    Quality -->|"Застосування нового стану: 15 мс"| State
+    State -->|"Опитування API та кадр: 120 мс"| UI
+    State -.->|"Г-01: замість опитування push і кадр: 30 мс"| UI
+    Quality -.->|"Асинхронний запис: 60 мс"| History
+    Access -.->|"Події: асинхронний запис 20 мс"| Journal
+    Quality -.->|"Помилки: асинхронний запис 20 мс"| Journal
