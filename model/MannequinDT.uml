@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.6/SysML/Blocks http://www.eclipse.org/papyrus/sysml/1.6/SysML#//blocks http://www.eclipse.org/papyrus/sysml/1.6/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.6/SysML#//requirements">
+  <uml:Model xmi:id="_oRA4sMRiEfGqDII7TSI-jA" name="MannequinDT">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_od9IgMRiEfGqDII7TSI-jA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_oeeF4MRiEfGqDII7TSI-jA">
+      <importedPackage xmi:type="uml:Package" href="pathmap://SysML16_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_48_t0MRiEfGqDII7TSI-jA" name="Requirements">
+      <packagedElement xmi:type="uml:Package" xmi:id="_-d6YsMRiEfGqDII7TSI-jA" name="DCE">
+        <packagedElement xmi:type="uml:Class" xmi:id="_jvy60MRjEfGqDII7TSI-jA" name="Приймання та перевірка телеметрії" visibility="protected"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_OY91QMRlEfGqDII7TSI-jA" name="Дистанційне керування"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ZnMoQMRlEfGqDII7TSI-jA" name="Локальна безпека керування"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Ak23EMRjEfGqDII7TSI-jA" name="DTE">
+        <packagedElement xmi:type="uml:Class" xmi:id="_qmgpEMRlEfGqDII7TSI-jA" name="Синхронізація фактичного стану"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_xFZYEMRlEfGqDII7TSI-jA" name="Зберігання історії та поз"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4MevgMRlEfGqDII7TSI-jA" name="Виявлення аномальних станів"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_BcgJYMRmEfGqDII7TSI-jA" name="Журналювання команд і подій"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_M6WswMRmEfGqDII7TSI-jA" name="Затримка синхронізації стану"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_b1EYkMRmEfGqDII7TSI-jA" name="Контроль актуальності та відновлення зв’язку"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_CQHfAMRjEfGqDII7TSI-jA" name="UE">
+        <packagedElement xmi:type="uml:Class" xmi:id="_mLA4sMRmEfGqDII7TSI-jA" name="3D-візуалізація"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_srXAQMRmEfGqDII7TSI-jA" name="Наскрізна затримка відображення"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_D4o8AMRjEfGqDII7TSI-jA" name="CrossCutting">
+        <packagedElement xmi:type="uml:Class" xmi:id="_0kQPIMRmEfGqDII7TSI-jA" name="Пропускна здатність і збереження даних"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_53hfkMRmEfGqDII7TSI-jA" name="Масштабованість"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_BmYosMRnEfGqDII7TSI-jA" name="Розмежування доступу"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PqoKEMRoEfGqDII7TSI-jA" name="Architecture">
+      <packagedElement xmi:type="uml:Class" xmi:id="_2AcOYMRoEfGqDII7TSI-jA" name="DataCollection">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_HO_6MMRrEfGqDII7TSI-jA" name="sensorInput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_PQH4AMRrEfGqDII7TSI-jA" name="telemetryOutput" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_YQQGoMRpEfGqDII7TSI-jA" name="DeviceControl">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_ZuhwkMRrEfGqDII7TSI-jA" name="commandInput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_kD_vkMRrEfGqDII7TSI-jA" name="resultOutput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_nFUykMRrEfGqDII7TSI-jA" name="driveOutput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_qAcf4MRrEfGqDII7TSI-jA" name="safetyInput" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_cDUIkMRpEfGqDII7TSI-jA" name="ResourceAccess">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_Dg40QMRsEfGqDII7TSI-jA" name="mqttChannel" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_FoI0oMRsEfGqDII7TSI-jA" name="clientApi" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_IcTlYMRsEfGqDII7TSI-jA" name="validation" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_Ke6WUMRsEfGqDII7TSI-jA" name="management" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_MZd-gMRsEfGqDII7TSI-jA" name="applications" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_OfhFAMRsEfGqDII7TSI-jA" name="journal" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_d2FtwMRpEfGqDII7TSI-jA" name="DataQuality">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_XgSh8MRsEfGqDII7TSI-jA" name="dataInput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_aD9YkMRsEfGqDII7TSI-jA" name="validatedOutput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_b_EaYMRsEfGqDII7TSI-jA" name="historyOutput" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_gXescMRpEfGqDII7TSI-jA" name="TwinManagement">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_fXK-oMRsEfGqDII7TSI-jA" name="stateInput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_jQ8FgMRsEfGqDII7TSI-jA" name="commandChannel" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_k61bgMRsEfGqDII7TSI-jA" name="stateApi" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_nXiugMRsEfGqDII7TSI-jA" name="applicationChannel" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_h90YIMRpEfGqDII7TSI-jA" name="TwinApplications">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_sRpRAMRsEfGqDII7TSI-jA" name="requestChannel" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_uGkyUMRsEfGqDII7TSI-jA" name="twinChannel" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_vyjzAMRsEfGqDII7TSI-jA" name="storageChannel" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_kEP5IMRpEfGqDII7TSI-jA" name="UserApplication">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_0RhRoMRsEfGqDII7TSI-jA" name="stateInput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_182yEMRsEfGqDII7TSI-jA" name="requestOutput" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_l0CbwMRpEfGqDII7TSI-jA" name="Security">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_C4I8wMRtEfGqDII7TSI-jA" name="accessPolicy" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_nYGPgMRpEfGqDII7TSI-jA" name="Interoperability">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_FHGHoMRtEfGqDII7TSI-jA" name="exchangeContract" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_o15qQMRpEfGqDII7TSI-jA" name="Broker">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_7VEpYMRrEfGqDII7TSI-jA" name="deviceChannel" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_-quWkMRrEfGqDII7TSI-jA" name="serverChannel" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_qp0e8MRpEfGqDII7TSI-jA" name="Store">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_6X-5kMRsEfGqDII7TSI-jA" name="historyInput" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_80zhUMRsEfGqDII7TSI-jA" name="poseHistoryAccess" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_-0lAsMRsEfGqDII7TSI-jA" name="journalInput" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sU45oMRpEfGqDII7TSI-jA" name="Physical">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_uL2JUMRrEfGqDII7TSI-jA" name="measurements" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_wyxvUMRrEfGqDII7TSI-jA" name="actuation" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_ybmHQMRrEfGqDII7TSI-jA" name="safetySignals" aggregation="composite"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_qPfZwMRxEfGqDII7TSI-jA" name="Відліки та стани"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_zfciMMRxEfGqDII7TSI-jA" name="Керування приводами та локальні входи"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_E_LIcMRyEfGqDII7TSI-jA" name="Телеметрія, події, heartbeat"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_IyawkMRyEfGqDII7TSI-jA" name="Команди, результати та аварійні події"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Mm8LEMRyEfGqDII7TSI-jA" name="MQTT-обмін"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_TyX3AMRyEfGqDII7TSI-jA" name="Вхідні дані"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_YzfngMRyEfGqDII7TSI-jA" name="Валідні дані для оновлення стану"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_ci1AAMRyEfGqDII7TSI-jA" name="Стан через API"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_iUsQ8MRyEfGqDII7TSI-jA" name="Команди, пози та запити"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_pf1B8MRyEfGqDII7TSI-jA" name="Дозволені команди та маршрутизація"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_xTzUkMRyEfGqDII7TSI-jA" name="Запити поз та історії"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_1vhR8MRyEfGqDII7TSI-jA" name="Стан, пози та попередження"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_87DrkMRyEfGqDII7TSI-jA" name="Історичні відліки"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_GXAooMRzEfGqDII7TSI-jA" name="Пози та історичні запити"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_JoEJsMRzEfGqDII7TSI-jA" name="Журнал команд і подій"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_OIQXYMRzEfGqDII7TSI-jA" name="Перевірка прав API" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_l0CbwMRpEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Td4YQMRzEfGqDII7TSI-jA" name="Права MQTT-тем" client="_o15qQMRpEfGqDII7TSI-jA" supplier="_l0CbwMRpEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_fv4VYMRzEfGqDII7TSI-jA" name="Контракти обміну" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_nYGPgMRpEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_mNClEMR-EfGqDII7TSI-jA" name="Satisfy1" client="_2AcOYMRoEfGqDII7TSI-jA" supplier="_jvy60MRjEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_n5qe8MR-EfGqDII7TSI-jA" name="Satisfy2" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_jvy60MRjEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_r0mqgMR-EfGqDII7TSI-jA" name="Satisfy3" client="_d2FtwMRpEfGqDII7TSI-jA" supplier="_jvy60MRjEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_xxJhcMR-EfGqDII7TSI-jA" name="Satisfy4" client="_gXescMRpEfGqDII7TSI-jA" supplier="_OY91QMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_7dGpYMR-EfGqDII7TSI-jA" name="Satisfy5" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_OY91QMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_ETbw4MR_EfGqDII7TSI-jA" name="Satisfy6" client="_l0CbwMRpEfGqDII7TSI-jA" supplier="_OY91QMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_JBpMcMR_EfGqDII7TSI-jA" name="Satisfy7" client="_YQQGoMRpEfGqDII7TSI-jA" supplier="_OY91QMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_MTgl0MR_EfGqDII7TSI-jA" name="Satisfy8" client="_YQQGoMRpEfGqDII7TSI-jA" supplier="_ZnMoQMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_nh_JUMR_EfGqDII7TSI-jA" name="Satisfy9" client="_gXescMRpEfGqDII7TSI-jA" supplier="_mLA4sMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_pogw8MR_EfGqDII7TSI-jA" name="Satisfy10" client="_kEP5IMRpEfGqDII7TSI-jA" supplier="_mLA4sMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_ug9GkMR_EfGqDII7TSI-jA" name="Satisfy11" client="_gXescMRpEfGqDII7TSI-jA" supplier="_srXAQMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_0VaYgMR_EfGqDII7TSI-jA" name="Satisfy12" client="_kEP5IMRpEfGqDII7TSI-jA" supplier="_srXAQMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_9j46QMR_EfGqDII7TSI-jA" name="Satisfy13" client="_2AcOYMRoEfGqDII7TSI-jA" supplier="_srXAQMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="__8FgsMR_EfGqDII7TSI-jA" name="Satisfy14" client="_o15qQMRpEfGqDII7TSI-jA" supplier="_srXAQMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_B4fjAMSAEfGqDII7TSI-jA" name="Satisfy15" client="_d2FtwMRpEfGqDII7TSI-jA" supplier="_srXAQMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_D2GfMMSAEfGqDII7TSI-jA" name="Satisfy16" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_srXAQMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Tu91UMSAEfGqDII7TSI-jA" name="Satisfy17" client="_2AcOYMRoEfGqDII7TSI-jA" supplier="_0kQPIMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Wey4oMSAEfGqDII7TSI-jA" name="Satisfy18" client="_o15qQMRpEfGqDII7TSI-jA" supplier="_0kQPIMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_amUusMSAEfGqDII7TSI-jA" name="Satisfy19" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_0kQPIMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_cs6nwMSAEfGqDII7TSI-jA" name="Satisfy20" client="_d2FtwMRpEfGqDII7TSI-jA" supplier="_0kQPIMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_e10N8MSAEfGqDII7TSI-jA" name="Satisfy21" client="_qp0e8MRpEfGqDII7TSI-jA" supplier="_0kQPIMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_kO3WQMSAEfGqDII7TSI-jA" name="Satisfy22" client="_o15qQMRpEfGqDII7TSI-jA" supplier="_53hfkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_mSdlsMSAEfGqDII7TSI-jA" name="Satisfy23" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_53hfkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_pd9RUMSAEfGqDII7TSI-jA" name="Satisfy24" client="_d2FtwMRpEfGqDII7TSI-jA" supplier="_53hfkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_tGoBIMSAEfGqDII7TSI-jA" name="Satisfy25" client="_qp0e8MRpEfGqDII7TSI-jA" supplier="_53hfkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_vXPY4MSAEfGqDII7TSI-jA" name="Satisfy26" client="_gXescMRpEfGqDII7TSI-jA" supplier="_53hfkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_0Ueu8MSAEfGqDII7TSI-jA" name="Satisfy27" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_BmYosMRnEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_7N9IMMSAEfGqDII7TSI-jA" name="Satisfy28" client="_o15qQMRpEfGqDII7TSI-jA" supplier="_BmYosMRnEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Cgqg0MSBEfGqDII7TSI-jA" name="Satisfy29" client="_l0CbwMRpEfGqDII7TSI-jA" supplier="_BmYosMRnEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_OLwO8MSBEfGqDII7TSI-jA" name="Satisfy30" client="_gXescMRpEfGqDII7TSI-jA" supplier="_qmgpEMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_UjhCQMSBEfGqDII7TSI-jA" name="Satisfy31" client="_gXescMRpEfGqDII7TSI-jA" supplier="_4MevgMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_WmxTcMSBEfGqDII7TSI-jA" name="Satisfy32" client="_h90YIMRpEfGqDII7TSI-jA" supplier="_4MevgMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_hVvXkMSBEfGqDII7TSI-jA" name="Satisfy33" client="_gXescMRpEfGqDII7TSI-jA" supplier="_xFZYEMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_jxbW4MSBEfGqDII7TSI-jA" name="Satisfy34" client="_h90YIMRpEfGqDII7TSI-jA" supplier="_xFZYEMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_rvlgQMSBEfGqDII7TSI-jA" name="Satisfy35" client="_d2FtwMRpEfGqDII7TSI-jA" supplier="_xFZYEMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_uHiPEMSBEfGqDII7TSI-jA" name="Satisfy36" client="_qp0e8MRpEfGqDII7TSI-jA" supplier="_xFZYEMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_w1VSEMSBEfGqDII7TSI-jA" name="Satisfy37" client="_YQQGoMRpEfGqDII7TSI-jA" supplier="_xFZYEMRlEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_14-LEMSBEfGqDII7TSI-jA" name="Satisfy38" client="_qp0e8MRpEfGqDII7TSI-jA" supplier="_BcgJYMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_8DRKIMSBEfGqDII7TSI-jA" name="Satisfy39" client="_YQQGoMRpEfGqDII7TSI-jA" supplier="_BcgJYMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_ER1uEMSCEfGqDII7TSI-jA" name="Satisfy40" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_BcgJYMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_RQ5lgMSCEfGqDII7TSI-jA" name="Satisfy41" client="_d2FtwMRpEfGqDII7TSI-jA" supplier="_M6WswMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_V2yLgMSCEfGqDII7TSI-jA" name="Satisfy42" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_M6WswMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_kPevYMSCEfGqDII7TSI-jA" name="Satisfy43" client="_gXescMRpEfGqDII7TSI-jA" supplier="_M6WswMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_nICQ4MSCEfGqDII7TSI-jA" name="Satisfy44" client="_2AcOYMRoEfGqDII7TSI-jA" supplier="_M6WswMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_q0oecMSCEfGqDII7TSI-jA" name="Satisfy45" client="_o15qQMRpEfGqDII7TSI-jA" supplier="_M6WswMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_2aqtcMSCEfGqDII7TSI-jA" name="Satisfy46" client="_YQQGoMRpEfGqDII7TSI-jA" supplier="_b1EYkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_746e0MSCEfGqDII7TSI-jA" name="Satisfy47" client="_cDUIkMRpEfGqDII7TSI-jA" supplier="_b1EYkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Bds9EMSDEfGqDII7TSI-jA" name="Satisfy48" client="_gXescMRpEfGqDII7TSI-jA" supplier="_b1EYkMRmEfGqDII7TSI-jA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_qP_q4MSDEfGj-I4LFexoZg" name="Satisfy49" client="_kEP5IMRpEfGqDII7TSI-jA" supplier="_b1EYkMRmEfGqDII7TSI-jA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_vrxKUMRzEfGqDII7TSI-jA" name="Behavior">
+      <packagedElement xmi:type="uml:Activity" xmi:id="_01e2IMRzEfGqDII7TSI-jA" name="Activity1" node="_oHRBoMR0EfGqDII7TSI-jA _ytNFkMR0EfGqDII7TSI-jA _2OgpIMR0EfGqDII7TSI-jA _eqhk8MR1EfGqDII7TSI-jA _goKEYMR3EfGqDII7TSI-jA _keGbMMR3EfGqDII7TSI-jA _qkPTAMR3EfGqDII7TSI-jA _xU_1IMR3EfGqDII7TSI-jA _0bSQoMR3EfGqDII7TSI-jA _66yqsMR3EfGqDII7TSI-jA _CX58gMR4EfGqDII7TSI-jA _E7vyQMR4EfGqDII7TSI-jA _IF8dYMR4EfGqDII7TSI-jA">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_cdmIcMR3EfGqDII7TSI-jA" name="DataCollection: сформувати повідомлення з ID, часом і значенням"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_hiK1kMR3EfGqDII7TSI-jA" name="Broker: доставити повідомлення серверу"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lGQAUMR3EfGqDII7TSI-jA" name="OpaqueBehavior8"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_rEVvYMR3EfGqDII7TSI-jA" name="OpaqueBehavior10"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_x64wcMR3EfGqDII7TSI-jA" name="OpaqueBehavior12"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0zJ-EMR3EfGqDII7TSI-jA" name="OpaqueBehavior14"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_C7VZsMR4EfGqDII7TSI-jA" name="OpaqueBehavior17"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Fey08MR4EfGqDII7TSI-jA" name="OpaqueBehavior19"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Iha4cMR4EfGqDII7TSI-jA" name="OpaqueBehavior21"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_QkYCQMR4EfGqDII7TSI-jA" target="_eqhk8MR1EfGqDII7TSI-jA" source="_oHRBoMR0EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Yc6PUMR5EfGqDII7TSI-jA" target="_goKEYMR3EfGqDII7TSI-jA" source="_eqhk8MR1EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZHO-sMR5EfGqDII7TSI-jA" target="_keGbMMR3EfGqDII7TSI-jA" source="_goKEYMR3EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_aLEaQMR5EfGqDII7TSI-jA" target="_qkPTAMR3EfGqDII7TSI-jA" source="_keGbMMR3EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_cOfqkMR5EfGqDII7TSI-jA" target="_2OgpIMR0EfGqDII7TSI-jA" source="_qkPTAMR3EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_d5Cg0MR5EfGqDII7TSI-jA" name="Дані коректні" target="_0bSQoMR3EfGqDII7TSI-jA" source="_2OgpIMR0EfGqDII7TSI-jA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_-nH1sMR7EfGqDII7TSI-jA" name="дані коректні"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_mMAckMR5EfGqDII7TSI-jA" name="Дані некоректні" target="_xU_1IMR3EfGqDII7TSI-jA" source="_2OgpIMR0EfGqDII7TSI-jA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_H9tKkMR8EfGqDII7TSI-jA" name="дані некоректні"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_uMgIQMR5EfGqDII7TSI-jA" target="_ytNFkMR0EfGqDII7TSI-jA" source="_xU_1IMR3EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_0BOf8MR5EfGqDII7TSI-jA" target="_66yqsMR3EfGqDII7TSI-jA" source="_0bSQoMR3EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_4yi54MR5EfGqDII7TSI-jA" name="Новий стан" target="_CX58gMR4EfGqDII7TSI-jA" source="_66yqsMR3EfGqDII7TSI-jA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_KhDREMR8EfGqDII7TSI-jA" name="Новий стан"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="__6ksgMR5EfGqDII7TSI-jA" target="_E7vyQMR4EfGqDII7TSI-jA" source="_CX58gMR4EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_AuQzQMR6EfGqDII7TSI-jA" target="_IF8dYMR4EfGqDII7TSI-jA" source="_E7vyQMR4EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_Bgs80MR6EfGqDII7TSI-jA" target="_ytNFkMR0EfGqDII7TSI-jA" source="_IF8dYMR4EfGqDII7TSI-jA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_C9KTwMR6EfGqDII7TSI-jA" name="Else" target="_ytNFkMR0EfGqDII7TSI-jA" source="_66yqsMR3EfGqDII7TSI-jA">
+          <guard xmi:type="uml:LiteralString" xmi:id="_NWIAwMR8EfGqDII7TSI-jA" name="Else"/>
+        </edge>
+        <node xmi:type="uml:InitialNode" xmi:id="_oHRBoMR0EfGqDII7TSI-jA" name="InitialNode" outgoing="_QkYCQMR4EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_ytNFkMR0EfGqDII7TSI-jA" name="ActivityFinalNode" incoming="_uMgIQMR5EfGqDII7TSI-jA _Bgs80MR6EfGqDII7TSI-jA _C9KTwMR6EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:DecisionNode" xmi:id="_2OgpIMR0EfGqDII7TSI-jA" name="DecisionNode" incoming="_cOfqkMR5EfGqDII7TSI-jA" outgoing="_d5Cg0MR5EfGqDII7TSI-jA _mMAckMR5EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_eqhk8MR1EfGqDII7TSI-jA" name="DataCollection: сформувати повідомлення з ID, часом і значенням" incoming="_QkYCQMR4EfGqDII7TSI-jA" outgoing="_Yc6PUMR5EfGqDII7TSI-jA" behavior="_cdmIcMR3EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_goKEYMR3EfGqDII7TSI-jA" name="Broker: доставити повідомлення серверу" incoming="_Yc6PUMR5EfGqDII7TSI-jA" outgoing="_ZHO-sMR5EfGqDII7TSI-jA" behavior="_hiK1kMR3EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_keGbMMR3EfGqDII7TSI-jA" name="ResourceAccess: прийняти й декодувати повідомлення" incoming="_ZHO-sMR5EfGqDII7TSI-jA" outgoing="_aLEaQMR5EfGqDII7TSI-jA" behavior="_lGQAUMR3EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_qkPTAMR3EfGqDII7TSI-jA" name="DataQuality: перевірити структуру, ID, діапазон і часову мітку" incoming="_aLEaQMR5EfGqDII7TSI-jA" outgoing="_cOfqkMR5EfGqDII7TSI-jA" behavior="_rEVvYMR3EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_xU_1IMR3EfGqDII7TSI-jA" name="Зареєструвати помилку без оновлення стану" incoming="_mMAckMR5EfGqDII7TSI-jA" outgoing="_uMgIQMR5EfGqDII7TSI-jA" behavior="_x64wcMR3EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_0bSQoMR3EfGqDII7TSI-jA" name="Поставити валідний відлік у чергу збереження історії" incoming="_d5Cg0MR5EfGqDII7TSI-jA" outgoing="_0BOf8MR5EfGqDII7TSI-jA" behavior="_0zJ-EMR3EfGqDII7TSI-jA">
+          <handler xmi:type="uml:ExceptionHandler" xmi:id="_C-68YMR8EfGqDII7TSI-jA"/>
+        </node>
+        <node xmi:type="uml:DecisionNode" xmi:id="_66yqsMR3EfGqDII7TSI-jA" name="DecisionNode_2" incoming="_0BOf8MR5EfGqDII7TSI-jA" outgoing="_4yi54MR5EfGqDII7TSI-jA _C9KTwMR6EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_CX58gMR4EfGqDII7TSI-jA" name="TwinManagement: оновити фактичний стан" incoming="_4yi54MR5EfGqDII7TSI-jA" outgoing="__6ksgMR5EfGqDII7TSI-jA" behavior="_C7VZsMR4EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_E7vyQMR4EfGqDII7TSI-jA" name="UserApplication: отримати стан під час наступного опитування API" incoming="__6ksgMR5EfGqDII7TSI-jA" outgoing="_AuQzQMR6EfGqDII7TSI-jA" behavior="_Fey08MR4EfGqDII7TSI-jA"/>
+        <node xmi:type="uml:CallBehaviorAction" xmi:id="_IF8dYMR4EfGqDII7TSI-jA" name="UserApplication: відобразити стан і фактичну позу" incoming="_AuQzQMR6EfGqDII7TSI-jA" outgoing="_Bgs80MR6EfGqDII7TSI-jA" behavior="_Iha4cMR4EfGqDII7TSI-jA"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oYxGgMRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oY8ssMRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_odl8IMRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_odnKQMRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//activities"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Activities"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_odzXgMRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_odz-kMRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//allocations"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Allocations"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_odz-kcRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_od1zwMRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//blocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Blocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_od3B4MRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_od3B4cRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//constraintblocks"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ConstraintBlocks"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_od3B4sRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_od3o8MRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//deprecatedelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_DeprecatedElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_od43EMRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_od5eIMRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//modelelements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ModelElements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_od6sQMRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_od6sQcRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//portsandflows"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Ports_u0026Flows"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_od7TUMRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_od7TUcRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/sysml/1.6/SysML#//requirements"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://SysML16_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Requirements"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_od8hcMRiEfGqDII7TSI-jA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_od8hccRiEfGqDII7TSI-jA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Requirements:Requirement xmi:id="_jv-hAMRjEfGqDII7TSI-jA" base_NamedElement="_jvy60MRjEfGqDII7TSI-jA" id="FR-01" text="Платформа повинна приймати сигнали S-01…S-11 відповідно до реєстру. Кожний відлік повинен містити ідентифікатори манекена й сигналу, часову мітку та значення. Повідомлення з некоректною структурою, невідомим ID або неприпустимим значенням повинні реєструватися як помилкові та не оновлювати поточний стан." base_Class="_jvy60MRjEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_OZA4kMRlEfGqDII7TSI-jA" base_NamedElement="_OY91QMRlEfGqDII7TSI-jA" id="FR-03" text="Платформа повинна дозволяти авторизованому користувачу задавати цільові кути шести модельованих осей і режим роботи. Кожна команда повинна мати унікальний ID та статус, що відображає її прийняття, виконання, відхилення або скасування." base_Class="_OY91QMRlEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_ZnOdcMRlEfGqDII7TSI-jA" base_NamedElement="_ZnMoQMRlEfGqDII7TSI-jA" id="FR-07" text="Контролер повинен перевіряти кути перед виконанням команд і блокувати рух у напрямку активного кінцевого вимикача. Аварійна зупинка повинна локально припиняти рух, переводити приводи у визначений безпечний стан і скасовувати чергу команд незалежно від мережі. Відновлення допускається лише після перевірки стану та явного підтвердження." base_Class="_ZnMoQMRlEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_qmieQMRlEfGqDII7TSI-jA" base_NamedElement="_qmgpEMRlEfGqDII7TSI-jA" id="FR-02" text="Платформа повинна оновлювати фактичні кути й стани манекена за телеметрією, окремо зберігаючи цільові значення команд. Надсилання команди не повинно вважатися підтвердженням її виконання. Старіші відліки не повинні перезаписувати новіший поточний стан." base_Class="_qmgpEMRlEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_xFbNQMRlEfGqDII7TSI-jA" base_NamedElement="_xFZYEMRlEfGqDII7TSI-jA" id="FR-04" text="Платформа повинна зберігати історію телеметрії з можливістю вибірки за манекеном, сигналом і часовим інтервалом. Користувач повинен мати можливість зберегти іменовану позу із шести кутів, переглянути її та запустити відтворення через механізм перевірених команд." base_Class="_xFZYEMRlEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_4MgksMRlEfGqDII7TSI-jA" base_NamedElement="_4MevgMRlEfGqDII7TSI-jA" id="FR-06" text="Платформа повинна виявляти перевищення налаштованих порогів струму й температури, вихід напруги за робочі межі та спрацювання дискретних сигналів. Повідомлення повинно містити манекен, сигнал, час, значення та причину. Порогові значення задаються окремо від діапазонів допустимості даних. " base_Class="_4MevgMRlEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_BchXgMRmEfGqDII7TSI-jA" base_NamedElement="_BcgJYMRmEfGqDII7TSI-jA" id="FR-08" text=" Система повинна зберігати для команд їхній ID, користувача або джерело, часові мітки, манекен, вісь, цільове значення, результат і причину відхилення чи скасування. Аварійні події та підтвердження відновлення повинні журналюватися; події під час розриву зв’язку — передаватися після його відновлення." base_Class="_BcgJYMRmEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_M6X64MRmEfGqDII7TSI-jA" base_NamedElement="_M6WswMRmEfGqDII7TSI-jA" id="NFR-01" text=" За базового навантаження 95-й перцентиль затримки від формування відліку на джерелі до оновлення відповідного стану, доступного через API, повинен становити не більше 250 мс." base_Class="_M6WswMRmEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_b1GNwMRmEfGqDII7TSI-jA" base_NamedElement="_b1EYkMRmEfGqDII7TSI-jA" id="NFR-05" text="Контролер повинен надсилати повідомлення працездатності кожну 1 с. За його відсутності протягом 3 с платформа повинна позначити зв’язок як втрачений, дані — як неактуальні та заблокувати нові команди руху. Після відновлення зв’язку актуальний стан усіх 11 сигналів повинен бути отриманий протягом 5 с; автоматичне відновлення руху заборонене." base_Class="_b1EYkMRmEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_mLCt4MRmEfGqDII7TSI-jA" base_NamedElement="_mLA4sMRmEfGqDII7TSI-jA" id="FR-05" text="Інтерфейс повинен відображати фактичну позу манекена, значення телеметрії, режим роботи та аварійний стан. Для даних повинні бути доступні час останнього оновлення й ознака втрати актуальності." base_Class="_mLA4sMRmEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_srY1cMRmEfGqDII7TSI-jA" base_NamedElement="_srXAQMRmEfGqDII7TSI-jA" id="NFR-02" text="За базового навантаження 95-й перцентиль затримки «джерело — подання» для відліків кутів S-01…S-06, які оновлюють 3D-модель, повинен становити не більше 500 мс." base_Class="_srXAQMRmEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_0kSEUMRmEfGqDII7TSI-jA" base_NamedElement="_0kQPIMRmEfGqDII7TSI-jA" id="NFR-03" text="Платформа повинна приймати, обробляти й зберігати щонайменше 200 відліків/с протягом 30 хв без втрат на справному тестовому з’єднанні. До потоку входять 171 періодичний відлік/с і 29 тестових подієвих записів/с; інтенсивність подій використовується лише для навантажувальної перевірки." base_Class="_0kQPIMRmEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_53jUwMRmEfGqDII7TSI-jA" base_NamedElement="_53hfkMRmEfGqDII7TSI-jA" id="NFR-04" text="При збільшенні кількості емуляторів манекена з 1 до 10, кожний із потоком 200 відліків/с, p95 затримки синхронізації повинен зростати не більше ніж на 30 % і залишатися не більшим за 250 мс. Втрати відліків не допускаються." base_Class="_53hfkMRmEfGqDII7TSI-jA"/>
+  <Requirements:Requirement xmi:id="_BmZPwMRnEfGqDII7TSI-jA" base_NamedElement="_BmYosMRnEfGqDII7TSI-jA" id="NFR-06" text="Усі операції керування та зміни налаштувань повинні перевіряти автентифікацію й права доступу. Неавторизовані запити та запити ролі «спостерігач» на керування повинні відхилятися у 100 % тестових випадків, без передавання команд контролеру." base_Class="_BmYosMRnEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_2AeqoMRoEfGqDII7TSI-jA" base_Class="_2AcOYMRoEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_YQSi4MRpEfGqDII7TSI-jA" base_Class="_YQQGoMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_cDV9wMRpEfGqDII7TSI-jA" base_Class="_cDUIkMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_d2Hi8MRpEfGqDII7TSI-jA" base_Class="_d2FtwMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_gXfTgMRpEfGqDII7TSI-jA" base_Class="_gXescMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_h91mQMRpEfGqDII7TSI-jA" base_Class="_h90YIMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_kEQgMMRpEfGqDII7TSI-jA" base_Class="_kEP5IMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_l0Dp4MRpEfGqDII7TSI-jA" base_Class="_l0CbwMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_nYG2kMRpEfGqDII7TSI-jA" base_Class="_nYGPgMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_o16RUMRpEfGqDII7TSI-jA" base_Class="_o15qQMRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_qp27MMRpEfGqDII7TSI-jA" base_Class="_qp0e8MRpEfGqDII7TSI-jA"/>
+  <Blocks:Block xmi:id="_sU6HwMRpEfGqDII7TSI-jA" base_Class="_sU45oMRpEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_mNJSwMR-EfGqDII7TSI-jA" base_DirectedRelationship="_mNClEMR-EfGqDII7TSI-jA" base_Abstraction="_mNClEMR-EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_n5wlkMR-EfGqDII7TSI-jA" base_DirectedRelationship="_n5qe8MR-EfGqDII7TSI-jA" base_Abstraction="_n5qe8MR-EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_r0rjAMR-EfGqDII7TSI-jA" base_DirectedRelationship="_r0mqgMR-EfGqDII7TSI-jA" base_Abstraction="_r0mqgMR-EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_xxPoEMR-EfGqDII7TSI-jA" base_DirectedRelationship="_xxJhcMR-EfGqDII7TSI-jA" base_Abstraction="_xxJhcMR-EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_7dMwAMR-EfGqDII7TSI-jA" base_DirectedRelationship="_7dGpYMR-EfGqDII7TSI-jA" base_Abstraction="_7dGpYMR-EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_EThQcMR_EfGqDII7TSI-jA" base_DirectedRelationship="_ETbw4MR_EfGqDII7TSI-jA" base_Abstraction="_ETbw4MR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_JBvTEMR_EfGqDII7TSI-jA" base_DirectedRelationship="_JBpMcMR_EfGqDII7TSI-jA" base_Abstraction="_JBpMcMR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_MTmscMR_EfGqDII7TSI-jA" base_DirectedRelationship="_MTgl0MR_EfGqDII7TSI-jA" base_Abstraction="_MTgl0MR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_niEo4MR_EfGqDII7TSI-jA" base_DirectedRelationship="_nh_JUMR_EfGqDII7TSI-jA" base_Abstraction="_nh_JUMR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_polpcMR_EfGqDII7TSI-jA" base_DirectedRelationship="_pogw8MR_EfGqDII7TSI-jA" base_Abstraction="_pogw8MR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_uhCmIMR_EfGqDII7TSI-jA" base_DirectedRelationship="_ug9GkMR_EfGqDII7TSI-jA" base_Abstraction="_ug9GkMR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_0Vf4EMR_EfGqDII7TSI-jA" base_DirectedRelationship="_0VaYgMR_EfGqDII7TSI-jA" base_Abstraction="_0VaYgMR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_9j-Z0MR_EfGqDII7TSI-jA" base_DirectedRelationship="_9j46QMR_EfGqDII7TSI-jA" base_Abstraction="_9j46QMR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="__8LnUMR_EfGqDII7TSI-jA" base_DirectedRelationship="__8FgsMR_EfGqDII7TSI-jA" base_Abstraction="__8FgsMR_EfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_B4lCkMSAEfGqDII7TSI-jA" base_DirectedRelationship="_B4fjAMSAEfGqDII7TSI-jA" base_Abstraction="_B4fjAMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_D2L-wMSAEfGqDII7TSI-jA" base_DirectedRelationship="_D2GfMMSAEfGqDII7TSI-jA" base_Abstraction="_D2GfMMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_TvD78MSAEfGqDII7TSI-jA" base_DirectedRelationship="_Tu91UMSAEfGqDII7TSI-jA" base_Abstraction="_Tu91UMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_We4YMMSAEfGqDII7TSI-jA" base_DirectedRelationship="_Wey4oMSAEfGqDII7TSI-jA" base_Abstraction="_Wey4oMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_amZAIMSAEfGqDII7TSI-jA" base_DirectedRelationship="_amUusMSAEfGqDII7TSI-jA" base_Abstraction="_amUusMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_cs_gQMSAEfGqDII7TSI-jA" base_DirectedRelationship="_cs6nwMSAEfGqDII7TSI-jA" base_Abstraction="_cs6nwMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_e15tgMSAEfGqDII7TSI-jA" base_DirectedRelationship="_e10N8MSAEfGqDII7TSI-jA" base_Abstraction="_e10N8MSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_kO8OwMSAEfGqDII7TSI-jA" base_DirectedRelationship="_kO3WQMSAEfGqDII7TSI-jA" base_Abstraction="_kO3WQMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_mShQEMSAEfGqDII7TSI-jA" base_DirectedRelationship="_mSdlsMSAEfGqDII7TSI-jA" base_Abstraction="_mSdlsMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_peA7sMSAEfGqDII7TSI-jA" base_DirectedRelationship="_pd9RUMSAEfGqDII7TSI-jA" base_Abstraction="_pd9RUMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_tGuHwMSAEfGqDII7TSI-jA" base_DirectedRelationship="_tGoBIMSAEfGqDII7TSI-jA" base_Abstraction="_tGoBIMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_vXURYMSAEfGqDII7TSI-jA" base_DirectedRelationship="_vXPY4MSAEfGqDII7TSI-jA" base_Abstraction="_vXPY4MSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_0Uk1kMSAEfGqDII7TSI-jA" base_DirectedRelationship="_0Ueu8MSAEfGqDII7TSI-jA" base_Abstraction="_0Ueu8MSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_7OCnwMSAEfGqDII7TSI-jA" base_DirectedRelationship="_7N9IMMSAEfGqDII7TSI-jA" base_Abstraction="_7N9IMMSAEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_CgwAYMSBEfGqDII7TSI-jA" base_DirectedRelationship="_Cgqg0MSBEfGqDII7TSI-jA" base_Abstraction="_Cgqg0MSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_OL1HcMSBEfGqDII7TSI-jA" base_DirectedRelationship="_OLwO8MSBEfGqDII7TSI-jA" base_Abstraction="_OLwO8MSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_Ujmh0MSBEfGqDII7TSI-jA" base_DirectedRelationship="_UjhCQMSBEfGqDII7TSI-jA" base_Abstraction="_UjhCQMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_Wm2zAMSBEfGqDII7TSI-jA" base_DirectedRelationship="_WmxTcMSBEfGqDII7TSI-jA" base_Abstraction="_WmxTcMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_hV1eMMSBEfGqDII7TSI-jA" base_DirectedRelationship="_hVvXkMSBEfGqDII7TSI-jA" base_Abstraction="_hVvXkMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_jxg2cMSBEfGqDII7TSI-jA" base_DirectedRelationship="_jxbW4MSBEfGqDII7TSI-jA" base_Abstraction="_jxbW4MSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_rvq_0MSBEfGqDII7TSI-jA" base_DirectedRelationship="_rvlgQMSBEfGqDII7TSI-jA" base_Abstraction="_rvlgQMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_uHnuoMSBEfGqDII7TSI-jA" base_DirectedRelationship="_uHiPEMSBEfGqDII7TSI-jA" base_Abstraction="_uHiPEMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_w1axoMSBEfGqDII7TSI-jA" base_DirectedRelationship="_w1VSEMSBEfGqDII7TSI-jA" base_Abstraction="_w1VSEMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_15DDkMSBEfGqDII7TSI-jA" base_DirectedRelationship="_14-LEMSBEfGqDII7TSI-jA" base_Abstraction="_14-LEMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_8DX30MSBEfGqDII7TSI-jA" base_DirectedRelationship="_8DRKIMSBEfGqDII7TSI-jA" base_Abstraction="_8DRKIMSBEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_ER4xYMSCEfGqDII7TSI-jA" base_DirectedRelationship="_ER1uEMSCEfGqDII7TSI-jA" base_Abstraction="_ER1uEMSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_RRI2EMSCEfGqDII7TSI-jA" base_DirectedRelationship="_RQ5lgMSCEfGqDII7TSI-jA" base_Abstraction="_RQ5lgMSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_V26uYMSCEfGqDII7TSI-jA" base_DirectedRelationship="_V2yLgMSCEfGqDII7TSI-jA" base_Abstraction="_V2yLgMSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_kPvOEMSCEfGqDII7TSI-jA" base_DirectedRelationship="_kPevYMSCEfGqDII7TSI-jA" base_Abstraction="_kPevYMSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_nIHwcMSCEfGqDII7TSI-jA" base_DirectedRelationship="_nICQ4MSCEfGqDII7TSI-jA" base_Abstraction="_nICQ4MSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_q0vMIMSCEfGqDII7TSI-jA" base_DirectedRelationship="_q0oecMSCEfGqDII7TSI-jA" base_Abstraction="_q0oecMSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_2aypQMSCEfGqDII7TSI-jA" base_DirectedRelationship="_2aqtcMSCEfGqDII7TSI-jA" base_Abstraction="_2aqtcMSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_75BzkMSCEfGqDII7TSI-jA" base_DirectedRelationship="_746e0MSCEfGqDII7TSI-jA" base_Abstraction="_746e0MSCEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_Bdx1kMSDEfGqDII7TSI-jA" base_DirectedRelationship="_Bds9EMSDEfGqDII7TSI-jA" base_Abstraction="_Bds9EMSDEfGqDII7TSI-jA"/>
+  <Requirements:Satisfy xmi:id="_qQSl0MSDEfGj-I4LFexoZg" base_DirectedRelationship="_qP_q4MSDEfGj-I4LFexoZg" base_Abstraction="_qP_q4MSDEfGj-I4LFexoZg"/>
+</xmi:XMI>
