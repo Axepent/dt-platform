@@ -12,6 +12,12 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_jvy60MRjEfGqDII7TSI-jA" name="Приймання та перевірка телеметрії" visibility="protected"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_OY91QMRlEfGqDII7TSI-jA" name="Дистанційне керування"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_ZnMoQMRlEfGqDII7TSI-jA" name="Локальна безпека керування"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_VFY8EMSIEfG89Pi60TMs1w" name="TC_FR01"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_Z7YaoMSIEfG89Pi60TMs1w" name="Verify1" client="_VFY8EMSIEfG89Pi60TMs1w" supplier="_jvy60MRjEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_iJuVEMSIEfG89Pi60TMs1w" name="TC_FR03"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_l4rTEMSIEfG89Pi60TMs1w" name="Verify2" client="_iJuVEMSIEfG89Pi60TMs1w" supplier="_OY91QMRlEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_nuu1wMSIEfG89Pi60TMs1w" name="TC_FR07"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_p7x8IMSIEfG89Pi60TMs1w" name="Verify3" client="_nuu1wMSIEfG89Pi60TMs1w" supplier="_ZnMoQMRlEfGqDII7TSI-jA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_Ak23EMRjEfGqDII7TSI-jA" name="DTE">
         <packagedElement xmi:type="uml:Class" xmi:id="_qmgpEMRlEfGqDII7TSI-jA" name="Синхронізація фактичного стану"/>
@@ -20,15 +26,37 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_BcgJYMRmEfGqDII7TSI-jA" name="Журналювання команд і подій"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_M6WswMRmEfGqDII7TSI-jA" name="Затримка синхронізації стану"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_b1EYkMRmEfGqDII7TSI-jA" name="Контроль актуальності та відновлення зв’язку"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_uaCQIMSIEfG89Pi60TMs1w" name="TC_FR02"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_v7pz4MSIEfG89Pi60TMs1w" name="Verify4" client="_uaCQIMSIEfG89Pi60TMs1w" supplier="_qmgpEMRlEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_ywPbYMSIEfG89Pi60TMs1w" name="TC_FR06"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_0s-04MSIEfG89Pi60TMs1w" name="Verify5" client="_ywPbYMSIEfG89Pi60TMs1w" supplier="_4MevgMRlEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_4aav8MSIEfG89Pi60TMs1w" name="TC_FR04"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_6V4-IMSIEfG89Pi60TMs1w" name="Verify6" client="_4aav8MSIEfG89Pi60TMs1w" supplier="_xFZYEMRlEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_8VKuQMSIEfG89Pi60TMs1w" name="TC_FR08"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_-nvN0MSIEfG89Pi60TMs1w" name="Verify7" client="_8VKuQMSIEfG89Pi60TMs1w" supplier="_BcgJYMRmEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_DXSGIMSJEfG89Pi60TMs1w" name="TC_NFR05"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_Fg3BwMSJEfG89Pi60TMs1w" name="Verify8" client="_DXSGIMSJEfG89Pi60TMs1w" supplier="_b1EYkMRmEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_HLv2QMSJEfG89Pi60TMs1w" name="TC_NFR01"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_JGAjgMSJEfG89Pi60TMs1w" name="Verify10" client="_HLv2QMSJEfG89Pi60TMs1w" supplier="_M6WswMRmEfGqDII7TSI-jA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_CQHfAMRjEfGqDII7TSI-jA" name="UE">
         <packagedElement xmi:type="uml:Class" xmi:id="_mLA4sMRmEfGqDII7TSI-jA" name="3D-візуалізація"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_srXAQMRmEfGqDII7TSI-jA" name="Наскрізна затримка відображення"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_Mlds8MSJEfG89Pi60TMs1w" name="TC_FR05"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_OhxooMSJEfG89Pi60TMs1w" name="Verify11" client="_Mlds8MSJEfG89Pi60TMs1w" supplier="_mLA4sMRmEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_QTTQoMSJEfG89Pi60TMs1w" name="TC_NFR02"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_Sgv_oMSJEfG89Pi60TMs1w" name="Verify12" client="_QTTQoMSJEfG89Pi60TMs1w" supplier="_srXAQMRmEfGqDII7TSI-jA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_D4o8AMRjEfGqDII7TSI-jA" name="CrossCutting">
         <packagedElement xmi:type="uml:Class" xmi:id="_0kQPIMRmEfGqDII7TSI-jA" name="Пропускна здатність і збереження даних"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_53hfkMRmEfGqDII7TSI-jA" name="Масштабованість"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_BmYosMRnEfGqDII7TSI-jA" name="Розмежування доступу"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_ZGyfgMSJEfG89Pi60TMs1w" name="TC_NFR03"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_bLaCoMSJEfG89Pi60TMs1w" name="Verify9" client="_ZGyfgMSJEfG89Pi60TMs1w" supplier="_0kQPIMRmEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_dAEeMMSJEfG89Pi60TMs1w" name="TC_NFR04"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_etGnwMSJEfG89Pi60TMs1w" name="Verify13" client="_dAEeMMSJEfG89Pi60TMs1w" supplier="_53hfkMRmEfGqDII7TSI-jA"/>
+        <packagedElement xmi:type="uml:Activity" xmi:id="_gkNTUMSJEfG89Pi60TMs1w" name="TC_NFR06"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_jrIA8MSJEfG89Pi60TMs1w" name="Verify14" client="_gkNTUMSJEfG89Pi60TMs1w" supplier="_BmYosMRnEfGqDII7TSI-jA"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_PqoKEMRoEfGqDII7TSI-jA" name="Architecture">
@@ -344,4 +372,32 @@
   <Requirements:Satisfy xmi:id="_75BzkMSCEfGqDII7TSI-jA" base_DirectedRelationship="_746e0MSCEfGqDII7TSI-jA" base_Abstraction="_746e0MSCEfGqDII7TSI-jA"/>
   <Requirements:Satisfy xmi:id="_Bdx1kMSDEfGqDII7TSI-jA" base_DirectedRelationship="_Bds9EMSDEfGqDII7TSI-jA" base_Abstraction="_Bds9EMSDEfGqDII7TSI-jA"/>
   <Requirements:Satisfy xmi:id="_qQSl0MSDEfGj-I4LFexoZg" base_DirectedRelationship="_qP_q4MSDEfGj-I4LFexoZg" base_Abstraction="_qP_q4MSDEfGj-I4LFexoZg"/>
+  <Requirements:TestCase xmi:id="_VFzLwMSIEfG89Pi60TMs1w" base_Behavior="_VFY8EMSIEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_Z7ehQMSIEfG89Pi60TMs1w" base_DirectedRelationship="_Z7YaoMSIEfG89Pi60TMs1w" base_Abstraction="_Z7YaoMSIEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_iJxYYMSIEfG89Pi60TMs1w" base_Behavior="_iJuVEMSIEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_l4wLkMSIEfG89Pi60TMs1w" base_DirectedRelationship="_l4rTEMSIEfG89Pi60TMs1w" base_Abstraction="_l4rTEMSIEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_nux5EMSIEfG89Pi60TMs1w" base_Behavior="_nuu1wMSIEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_p73bsMSIEfG89Pi60TMs1w" base_DirectedRelationship="_p7x8IMSIEfG89Pi60TMs1w" base_Abstraction="_p7x8IMSIEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_uaF6gMSIEfG89Pi60TMs1w" base_Behavior="_uaCQIMSIEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_v7uFUMSIEfG89Pi60TMs1w" base_DirectedRelationship="_v7pz4MSIEfG89Pi60TMs1w" base_Abstraction="_v7pz4MSIEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_ywTFwMSIEfG89Pi60TMs1w" base_Behavior="_ywPbYMSIEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_0tE7gMSIEfG89Pi60TMs1w" base_DirectedRelationship="_0s-04MSIEfG89Pi60TMs1w" base_Abstraction="_0s-04MSIEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_4afocMSIEfG89Pi60TMs1w" base_Behavior="_4aav8MSIEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_6V9PkMSIEfG89Pi60TMs1w" base_DirectedRelationship="_6V4-IMSIEfG89Pi60TMs1w" base_Abstraction="_6V4-IMSIEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_8VOYoMSIEfG89Pi60TMs1w" base_Behavior="_8VKuQMSIEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_-n0GUMSIEfG89Pi60TMs1w" base_DirectedRelationship="_-nvN0MSIEfG89Pi60TMs1w" base_Abstraction="_-nvN0MSIEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_DXVwgMSJEfG89Pi60TMs1w" base_Behavior="_DXSGIMSJEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_Fg5eAMSJEfG89Pi60TMs1w" base_DirectedRelationship="_Fg3BwMSJEfG89Pi60TMs1w" base_Abstraction="_Fg3BwMSJEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_HLzgoMSJEfG89Pi60TMs1w" base_Behavior="_HLv2QMSJEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_JGEN4MSJEfG89Pi60TMs1w" base_DirectedRelationship="_JGAjgMSJEfG89Pi60TMs1w" base_Abstraction="_JGAjgMSJEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_MlgwQMSJEfG89Pi60TMs1w" base_Behavior="_Mlds8MSJEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_Oh1TAMSJEfG89Pi60TMs1w" base_DirectedRelationship="_OhxooMSJEfG89Pi60TMs1w" base_Abstraction="_OhxooMSJEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_QTXiEMSJEfG89Pi60TMs1w" base_Behavior="_QTTQoMSJEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_Sg0REMSJEfG89Pi60TMs1w" base_DirectedRelationship="_Sgv_oMSJEfG89Pi60TMs1w" base_Abstraction="_Sgv_oMSJEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_ZG1i0MSJEfG89Pi60TMs1w" base_Behavior="_ZGyfgMSJEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_bLdtAMSJEfG89Pi60TMs1w" base_DirectedRelationship="_bLaCoMSJEfG89Pi60TMs1w" base_Abstraction="_bLaCoMSJEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_dAIIkMSJEfG89Pi60TMs1w" base_Behavior="_dAEeMMSJEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_etKSIMSJEfG89Pi60TMs1w" base_DirectedRelationship="_etGnwMSJEfG89Pi60TMs1w" base_Abstraction="_etGnwMSJEfG89Pi60TMs1w"/>
+  <Requirements:TestCase xmi:id="_gkQWoMSJEfG89Pi60TMs1w" base_Behavior="_gkNTUMSJEfG89Pi60TMs1w"/>
+  <Requirements:Verify xmi:id="_jrLrUMSJEfG89Pi60TMs1w" base_DirectedRelationship="_jrIA8MSJEfG89Pi60TMs1w" base_Abstraction="_jrIA8MSJEfG89Pi60TMs1w"/>
 </xmi:XMI>
