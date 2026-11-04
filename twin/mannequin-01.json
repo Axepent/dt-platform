@@ -1,0 +1,9 @@
+{
+  "definition": "http://web/twin/mannequin-1.0.0.tm.jsonld",
+  "policyId": "org.pzks:mannequin-01",
+  "attributes": {
+    "assetType": "Роботизований художній манекен",
+    "axisCount": 6,
+    "controllerId": "org.pzks:controller-01"
+  }
+}

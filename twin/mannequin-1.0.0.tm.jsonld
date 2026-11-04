@@ -1,0 +1,129 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "qudt": "http://qudt.org/vocab/unit/",
+      "mannequin": "http://example.org/mannequin#"
+    }
+  ],
+  "@type": [
+    "tm:ThingModel",
+    "mannequin:RoboticMannequin"
+  ],
+  "title": "Роботизований художній манекен",
+  "version": {
+    "model": "1.0.0"
+  },
+  "properties": {
+    "assetType": {
+      "title": "Тип об’єкта",
+      "type": "string",
+      "readOnly": true
+    },
+    "axisCount": {
+      "title": "Кількість модельованих осей",
+      "type": "integer",
+      "minimum": 6,
+      "maximum": 6,
+      "readOnly": true
+    },
+    "controllerId": {
+      "title": "Контролер",
+      "description": "Зв’язок controlledBy, значення — thingId двійника контролера.",
+      "type": "string",
+      "readOnly": true
+    }
+  },
+  "actions": {
+    "set-target-pose": {
+      "title": "Задати цільові кути",
+      "input": {
+        "type": "object",
+        "properties": {
+          "shoulderAngle": {
+            "title": "Кут згинання плеча",
+            "type": "number",
+            "unit": "qudt:DEG",
+            "minimum": -90,
+            "maximum": 90
+          },
+          "elbowAngle": {
+            "title": "Кут згинання ліктя",
+            "type": "number",
+            "unit": "qudt:DEG",
+            "minimum": 0,
+            "maximum": 135
+          },
+          "hipAngle": {
+            "title": "Кут згинання кульшового шарніра",
+            "type": "number",
+            "unit": "qudt:DEG",
+            "minimum": -60,
+            "maximum": 90
+          },
+          "kneeAngle": {
+            "title": "Кут згинання коліна",
+            "type": "number",
+            "unit": "qudt:DEG",
+            "minimum": 0,
+            "maximum": 135
+          },
+          "headAngle": {
+            "title": "Кут повороту голови",
+            "type": "number",
+            "unit": "qudt:DEG",
+            "minimum": -60,
+            "maximum": 60
+          },
+          "torsoAngle": {
+            "title": "Кут нахилу тулуба",
+            "type": "number",
+            "unit": "qudt:DEG",
+            "minimum": -45,
+            "maximum": 45
+          }
+        },
+        "required": [
+          "shoulderAngle",
+          "elbowAngle",
+          "hipAngle",
+          "kneeAngle",
+          "headAngle",
+          "torsoAngle"
+        ]
+      }
+    }
+  },
+  "links": [
+    {
+      "rel": "tm:submodel",
+      "instanceName": "pose",
+      "href": "http://web/twin/pose-1.0.0.tm.jsonld",
+      "type": "application/tm+json"
+    },
+    {
+      "rel": "tm:submodel",
+      "instanceName": "drive",
+      "href": "http://web/twin/drive-1.0.0.tm.jsonld",
+      "type": "application/tm+json"
+    },
+    {
+      "rel": "tm:submodel",
+      "instanceName": "power",
+      "href": "http://web/twin/power-1.0.0.tm.jsonld",
+      "type": "application/tm+json"
+    },
+    {
+      "rel": "tm:submodel",
+      "instanceName": "safety",
+      "href": "http://web/twin/safety-1.0.0.tm.jsonld",
+      "type": "application/tm+json"
+    },
+    {
+      "rel": "tm:submodel",
+      "instanceName": "sync",
+      "href": "http://web/twin/sync-1.0.0.tm.jsonld",
+      "type": "application/tm+json"
+    }
+  ]
+}

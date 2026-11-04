@@ -1,0 +1,105 @@
+@prefix : <http://example.org/mannequin#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/mannequin> a owl:Ontology .
+
+:Asset a owl:Class .
+:Sensor a owl:Class .
+:ObservableProperty a owl:Class .
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Asset :Sensor :ObservableProperty ) .
+
+:TestStand a owl:Class ; rdfs:subClassOf :Asset .
+:RoboticMannequin a owl:Class ; rdfs:subClassOf :Asset .
+:Drive a owl:Class ; rdfs:subClassOf :Asset .
+:Controller a owl:Class ; rdfs:subClassOf :Asset .
+:AngleSensor a owl:Class ; rdfs:subClassOf :Sensor .
+:ElectricalSensor a owl:Class ; rdfs:subClassOf :Sensor .
+:TemperatureSensor a owl:Class ; rdfs:subClassOf :Sensor .
+:DiscreteInput a owl:Class ; rdfs:subClassOf :Sensor .
+
+:hasPart a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:domain :Asset ; rdfs:range :Asset ; owl:inverseOf :partOf .
+:partOf a owl:ObjectProperty ;
+    rdfs:domain :Asset ; rdfs:range :Asset .
+:hasSensor a owl:ObjectProperty ;
+    rdfs:domain :Asset ; rdfs:range :Sensor .
+:observes a owl:ObjectProperty ;
+    rdfs:domain :Sensor ; rdfs:range :ObservableProperty .
+:controlledBy a owl:ObjectProperty ;
+    rdfs:domain :RoboticMannequin ; rdfs:range :Controller .
+:serialNo a owl:DatatypeProperty ;
+    rdfs:domain :Asset ; rdfs:range xsd:string .
+:samplingRate a owl:DatatypeProperty ;
+    rdfs:domain :Sensor ; rdfs:range xsd:decimal .
+
+:stand-01 a owl:NamedIndividual, :TestStand ;
+    :hasPart :mannequin-01 .
+:mannequin-01 a owl:NamedIndividual, :RoboticMannequin ;
+    :serialNo "LAB-MANNEQUIN-01" ;
+    :hasPart :drive-d01, :controller-01 ;
+    :controlledBy :controller-01 ;
+    :hasSensor :sensor-s01, :sensor-s02, :sensor-s03, :sensor-s04,
+               :sensor-s05, :sensor-s06 .
+:drive-d01 a owl:NamedIndividual, :Drive ;
+    :hasSensor :sensor-s07, :sensor-s08, :sensor-s10 .
+:controller-01 a owl:NamedIndividual, :Controller ;
+    :hasSensor :sensor-s09, :sensor-s11 .
+
+:ShoulderAngle a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s01 a owl:NamedIndividual, :ShoulderAngle .
+:sensor-s01 a owl:NamedIndividual, :AngleSensor ;
+    :observes :quantity-s01 ; :samplingRate "10"^^xsd:decimal .
+
+:ElbowAngle a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s02 a owl:NamedIndividual, :ElbowAngle .
+:sensor-s02 a owl:NamedIndividual, :AngleSensor ;
+    :observes :quantity-s02 ; :samplingRate "10"^^xsd:decimal .
+
+:HipAngle a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s03 a owl:NamedIndividual, :HipAngle .
+:sensor-s03 a owl:NamedIndividual, :AngleSensor ;
+    :observes :quantity-s03 ; :samplingRate "10"^^xsd:decimal .
+
+:KneeAngle a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s04 a owl:NamedIndividual, :KneeAngle .
+:sensor-s04 a owl:NamedIndividual, :AngleSensor ;
+    :observes :quantity-s04 ; :samplingRate "10"^^xsd:decimal .
+
+:HeadAngle a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s05 a owl:NamedIndividual, :HeadAngle .
+:sensor-s05 a owl:NamedIndividual, :AngleSensor ;
+    :observes :quantity-s05 ; :samplingRate "10"^^xsd:decimal .
+
+:TorsoAngle a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s06 a owl:NamedIndividual, :TorsoAngle .
+:sensor-s06 a owl:NamedIndividual, :AngleSensor ;
+    :observes :quantity-s06 ; :samplingRate "10"^^xsd:decimal .
+
+:Current a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s07 a owl:NamedIndividual, :Current .
+:sensor-s07 a owl:NamedIndividual, :ElectricalSensor ;
+    :observes :quantity-s07 ; :samplingRate "100"^^xsd:decimal .
+
+:Temperature a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s08 a owl:NamedIndividual, :Temperature .
+:sensor-s08 a owl:NamedIndividual, :TemperatureSensor ;
+    :observes :quantity-s08 ; :samplingRate "1"^^xsd:decimal .
+
+:Voltage a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s09 a owl:NamedIndividual, :Voltage .
+:sensor-s09 a owl:NamedIndividual, :ElectricalSensor ;
+    :observes :quantity-s09 ; :samplingRate "10"^^xsd:decimal .
+
+:LimitSwitchActive a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s10 a owl:NamedIndividual, :LimitSwitchActive .
+:sensor-s10 a owl:NamedIndividual, :DiscreteInput ;
+    :observes :quantity-s10 .
+
+:EmergencyStopActive a owl:Class ; rdfs:subClassOf :ObservableProperty .
+:quantity-s11 a owl:NamedIndividual, :EmergencyStopActive .
+:sensor-s11 a owl:NamedIndividual, :DiscreteInput ;
+    :observes :quantity-s11 .

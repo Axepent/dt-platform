@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "qudt": "http://qudt.org/vocab/unit/",
+      "mannequin": "http://example.org/mannequin#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "Живлення",
+  "version": {
+    "model": "1.0.0"
+  },
+  "properties": {
+    "voltage": {
+      "@type": "mannequin:Voltage",
+      "title": "Напруга живлення",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:V",
+      "minimum": 0,
+      "maximum": 15
+    }
+  }
+}

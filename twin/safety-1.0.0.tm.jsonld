@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "qudt": "http://qudt.org/vocab/unit/",
+      "mannequin": "http://example.org/mannequin#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "Дискретні стани безпеки",
+  "version": {
+    "model": "1.0.0"
+  },
+  "properties": {
+    "limitSwitchActive": {
+      "@type": "mannequin:LimitSwitchActive",
+      "title": "Стан кінцевого вимикача",
+      "observable": true,
+      "type": "boolean"
+    },
+    "emergencyStopActive": {
+      "@type": "mannequin:EmergencyStopActive",
+      "title": "Стан аварійної зупинки",
+      "observable": true,
+      "type": "boolean"
+    }
+  }
+}

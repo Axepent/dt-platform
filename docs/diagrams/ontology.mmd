@@ -1,0 +1,24 @@
+flowchart TB
+  A["Актив · Asset"]
+  S["Датчик · Sensor"]
+  O["Спостережувана величина · ObservableProperty"]
+  Stand["Навчальний стенд · TestStand"]
+  M["Манекен · RoboticMannequin"]
+  C["Контролер · Controller"]
+  D["Привід · Drive"]
+  ES["Електричний датчик · ElectricalSensor"]
+  I["Струм привода · Current"]
+  Stand -. підклас .-> A
+  M -. підклас .-> A
+  C -. підклас .-> A
+  D -. підклас .-> A
+  ES -. підклас .-> S
+  I -. підклас .-> O
+  Stand -->|"hasPart · stand-01 → mannequin-01"| M
+  M -->|"hasPart · mannequin-01 → drive-d01"| D
+  M -->|"controlledBy"| C
+  D -->|"hasSensor · S-07"| ES
+  ES -->|"observes · S-07"| I
+  N["Asset, Sensor і ObservableProperty попарно неперетинні"]
+  classDef base fill:#dceafa,stroke:#285483,color:#142d46
+  class A,S,O base

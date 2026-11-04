@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "qudt": "http://qudt.org/vocab/unit/",
+      "mannequin": "http://example.org/mannequin#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "Діагностика привода D-01",
+  "version": {
+    "model": "1.0.0"
+  },
+  "properties": {
+    "current": {
+      "@type": "mannequin:Current",
+      "title": "Струм привода",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:A",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "temperature": {
+      "@type": "mannequin:Temperature",
+      "title": "Температура привода",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:DEG_C",
+      "minimum": -10,
+      "maximum": 100
+    }
+  }
+}

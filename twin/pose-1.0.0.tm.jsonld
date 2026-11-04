@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "qudt": "http://qudt.org/vocab/unit/",
+      "mannequin": "http://example.org/mannequin#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "Фактична поза",
+  "version": {
+    "model": "1.0.0"
+  },
+  "properties": {
+    "shoulderAngle": {
+      "@type": "mannequin:ShoulderAngle",
+      "title": "Кут згинання плеча",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:DEG",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "elbowAngle": {
+      "@type": "mannequin:ElbowAngle",
+      "title": "Кут згинання ліктя",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:DEG",
+      "minimum": 0,
+      "maximum": 135
+    },
+    "hipAngle": {
+      "@type": "mannequin:HipAngle",
+      "title": "Кут згинання кульшового шарніра",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:DEG",
+      "minimum": -60,
+      "maximum": 90
+    },
+    "kneeAngle": {
+      "@type": "mannequin:KneeAngle",
+      "title": "Кут згинання коліна",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:DEG",
+      "minimum": 0,
+      "maximum": 135
+    },
+    "headAngle": {
+      "@type": "mannequin:HeadAngle",
+      "title": "Кут повороту голови",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:DEG",
+      "minimum": -60,
+      "maximum": 60
+    },
+    "torsoAngle": {
+      "@type": "mannequin:TorsoAngle",
+      "title": "Кут нахилу тулуба",
+      "observable": true,
+      "type": "number",
+      "unit": "qudt:DEG",
+      "minimum": -45,
+      "maximum": 45
+    }
+  }
+}
