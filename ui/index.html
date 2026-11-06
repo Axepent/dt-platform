@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Цифровий двійник манекена</title>
+  <style>
+    :root { color-scheme: light; font: 16px system-ui, sans-serif; color: #16283a; background: #f1f5f9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(1120px, calc(100% - 2rem)); margin: 2rem auto; }
+    header { background: #14283e; color: #fff; padding: clamp(1rem, 4vw, 2rem); border-radius: 16px; }
+    h1 { margin: .25rem 0 .75rem; font-size: clamp(1.55rem, 4vw, 2.5rem); }
+    h2 { margin: 1.5rem 0 .65rem; font-size: 1.13rem; }
+    .id { color: #c4d7e7; }
+    .summary, .grid { display: grid; gap: .65rem; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); }
+    .summary { margin-top: 1.2rem; }
+    .summary > div, .card { background: #fff; color: #16283a; padding: .85rem 1rem; border-radius: 10px; }
+    .card { border: 1px solid #dbe4ee; }
+    .label { color: #475c70; font-size: .87rem; }
+    .value { margin-top: .3rem; font-size: 1.55rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+    .status { margin-top: .3rem; display: block; font-weight: 650; }
+    .fresh { color: #14713b; }
+    .late { color: #885500; }
+    .stale, .active { color: #ad252e; }
+    #notice { margin: .75rem 0 0; color: #e1ebf4; font-size: .9rem; }
+    #notice:empty { display: none; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="id" id="thing"></div>
+    <h1>Цифровий двійник манекена</h1>
+    <div class="summary">
+      <div><span class="label">Давність даних</span><strong class="status" id="age">Очікування даних</strong></div>
+      <div><span class="label">Повідомлення №</span><strong class="status" id="seq">—</strong></div>
+      <div><span class="label">Потік SSE</span><strong class="status" id="stream">Підключення…</strong></div>
+    </div>
+    <p id="notice" role="status"></p>
+  </header>
+  <div id="groups"></div>
+</main>
+<script>
+  const THING = "org.pzks:mannequin-01";
+  const groups = [
+    ["Поза", "pose", [
+      ["shoulderAngle", "Кут плеча", "°"],
+      ["elbowAngle", "Кут ліктя", "°"],
+      ["hipAngle", "Кут кульшового шарніра", "°"],
+      ["kneeAngle", "Кут коліна", "°"],
+      ["headAngle", "Кут голови", "°"],
+      ["torsoAngle", "Кут тулуба", "°"]
+    ]],
+    ["Привід і живлення", null, [
+      ["current", "Струм привода", "А", "drive"],
+      ["temperature", "Температура привода", "°C", "drive"],
+      ["voltage", "Напруга живлення", "В", "power"]
+    ]],
+    ["Стани безпеки", "safety", [
+      ["limitSwitchActive", "Кінцевий вимикач", ""],
+      ["emergencyStopActive", "Вхід аварійної зупинки", ""]
+    ]]
+  ];
+
+  const byId = id => document.getElementById(id);
+  const cards = [];
+  const latest = new Map();
+  let sourceTs = 0;
+  let sequence;
+  let dirty = false;
+
+  byId("thing").textContent = THING;
+  for (const [title, feature, signals] of groups) {
+    const section = document.createElement("section");
+    const heading = document.createElement("h2");
+    heading.textContent = title;
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    for (const [property, name, unit, override] of signals) {
+      const card = document.createElement("div");
+      card.className = "card";
+      const label = document.createElement("div");
+      label.className = "label";
+      label.textContent = name;
+      const value = document.createElement("div");
+      value.className = "value";
+      value.textContent = "—";
+      card.append(label, value);
+      grid.append(card);
+      cards.push({ feature: override ?? feature, property, unit, element: value });
+    }
+    section.append(heading, grid);
+    byId("groups").append(section);
+  }
+
+  function cache(features) {
+    const sync = features?.sync?.properties;
+    const timestamp = sync?.ts;
+    if (Number.isFinite(timestamp) && timestamp < sourceTs) return;
+    for (const card of cards) {
+      const value = features?.[card.feature]?.properties?.[card.property];
+      if (typeof value === "boolean" || Number.isFinite(value)) latest.set(card, value);
+    }
+    if (Number.isFinite(timestamp) && timestamp > 0) sourceTs = timestamp;
+    if (sourceTs && Number.isInteger(sync?.seq)) sequence = sync.seq;
+    dirty = true;
+  }
+
+  function render() {
+    if (dirty) {
+      for (const [card, value] of latest) {
+        if (typeof value === "boolean") {
+          card.element.textContent = value ? "Активний" : "Неактивний";
+          card.element.classList.toggle("active", value);
+        } else {
+          card.element.textContent = `${value.toFixed(2)} ${card.unit}`;
+        }
+      }
+      byId("seq").textContent = sequence ?? "—";
+      dirty = false;
+    }
+    if (!sourceTs) return;
+    const age = Math.max(0, (Date.now() - sourceTs) / 1000);
+    byId("age").className = "status " + (age < 2 ? "fresh" : age < 10 ? "late" : "stale");
+    const state = age < 2 ? "актуальні" : age < 10 ? "із затримкою" : "застарілі";
+    byId("age").textContent = `${age.toFixed(1)} с · ${state}`;
+  }
+
+  const entityUrl = `/api/2/things/${encodeURIComponent(THING)}`;
+  async function loadSnapshot() {
+    try {
+      const response = await fetch(entityUrl, { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      cache((await response.json()).features);
+      byId("notice").textContent = "";
+    } catch (error) {
+      byId("notice").textContent = `Не вдалося прочитати стан (${error.message}).`;
+    }
+  }
+
+  const query = new URLSearchParams({ ids: THING, fields: "features" });
+  const events = new EventSource(`/api/2/things?${query}`);
+  events.onopen = () => {
+    byId("stream").textContent = "Підключено";
+    loadSnapshot();
+  };
+  events.onerror = () => { byId("stream").textContent = "Перепідключення…"; };
+  events.onmessage = ({ data }) => {
+    if (!data) return;
+    try {
+      cache(JSON.parse(data).features);
+      byId("notice").textContent = "";
+    } catch {
+      byId("notice").textContent = "Отримано подію SSE з некоректним JSON.";
+    }
+  };
+  loadSnapshot();
+  setInterval(render, 250);
+</script>
+</body>
+</html>
