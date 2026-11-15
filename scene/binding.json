@@ -1,0 +1,12 @@
+{
+  "thing": "org.pzks:mannequin-01",
+  "unit": "mannequin-01",
+  "bindings": [
+    {"node":"shoulder.L","feature":"pose","property":"shoulderAngle","title":"Плече","unit":"°","min":-90,"max":90,"axis":"x","direction":-1},
+    {"node":"elbow.L","feature":"pose","property":"elbowAngle","title":"Лікоть","unit":"°","min":0,"max":135,"axis":"x","direction":-1},
+    {"node":"hip.L","feature":"pose","property":"hipAngle","title":"Стегно","unit":"°","min":-60,"max":90,"axis":"x","direction":-1},
+    {"node":"knee.L","feature":"pose","property":"kneeAngle","title":"Коліно","unit":"°","min":0,"max":135,"axis":"x","direction":1},
+    {"node":"head","feature":"pose","property":"headAngle","title":"Поворот голови","unit":"°","min":-60,"max":60,"axis":"y","direction":1},
+    {"node":"torso","feature":"pose","property":"torsoAngle","title":"Нахил тулуба","unit":"°","min":-45,"max":45,"axis":"x","direction":1}
+  ]
+}

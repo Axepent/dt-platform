@@ -1,2 +1,5 @@
 .venv/
 platform/ditto/
+/scene/node_modules/
+/scene/tiles/
+/session/node_modules/
