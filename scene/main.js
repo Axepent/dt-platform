@@ -132,6 +132,15 @@ try {
   }
   if (!opt.has('defer')) void loadTiles();
   status.textContent = 'Підключення до Ditto…';
+  const participant = params.get('name')?.trim();
+  if (!benchmarkEnabled && participant) {
+    void import('./net.js')
+      .then(({ connectSession }) => {
+        const disconnect = connectSession({ scene, camera, renderer, hooks, params });
+        addEventListener('pagehide', disconnect, { once: true });
+      })
+      .catch(error => console.error('Сеанс недоступний:', error));
+  }
   await bindTwin(station);
 } catch (error) {
   console.error(error);
