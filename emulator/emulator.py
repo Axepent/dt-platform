@@ -20,7 +20,7 @@ FIELDS = {
     "S-09": "v", "S-10": "lim", "S-11": "est",
 }
 EVENTS = {"S-10", "S-11"}
-SOURCE_CSV = Path(__file__).resolve().parents[1] / "results" / "source.csv"
+SOURCE_CSV = Path(__file__).resolve().parents[1] / "results" / "source-live.csv"
 
 
 def frames(name, rate):
